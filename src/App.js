@@ -8,8 +8,8 @@ function App() {
 
    const updateCalc = (value) =>{
 
-     if(ops.includes(value) && calc==='' ||
-        ops.includes(value) && ops.includes(calc.slice(-1),toString())
+     if((ops.includes(value) && (calc==='')) ||
+        (ops.includes(value) && ops.includes(calc.slice(-1),toString()))
         
      ) {return;}
      setCalc(calc+value);
@@ -38,7 +38,7 @@ function App() {
   
   }
   const deleteLast = () =>{
-      if(calc == '')
+      if(calc === '')
         return ;
       const value=calc.toString().slice(0,-1);
       setCalc(value);
